@@ -57,7 +57,8 @@ namespace MyAutoCADTool
                     }
                 }
             }
-            catch (Exception ex)
+            // catch (Exception ex)
+            catch (System.Exception ex)
             {
                 Application.ShowAlertDialog("Lỗi kết nối: " + ex.Message);
             }
