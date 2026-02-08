@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <!-- Use net8.0-windows or net6.0-windows for AutoCAD 2024/2025 -->
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    
+    <!-- This is CRITICAL for System.Windows.Forms to work -->
+    <UseWindowsForms>true</UseWindowsForms>
+    
+    <!-- Essential for AutoCAD Plugins -->
+    <PlatformTarget>x64</PlatformTarget>
+    <Platforms>x64</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Public Libraries -->
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="System.Management" Version="8.0.0" />
+    
+    <!-- Official AutoCAD .NET API from NuGet -->
+    <!-- Version 25.0.0 is for AutoCAD 2025. Use 24.3.0 for AutoCAD 2024 -->
+    <PackageReference Include="AutoCAD.NET" Version="25.0.0" />
+    <PackageReference Include="AutoCAD.NET.Model" Version="25.0.0" />
+    <PackageReference Include="AutoCAD.NET.Core" Version="25.0.0" />
+  </ItemGroup>
+
+</Project>
