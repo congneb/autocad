@@ -138,12 +138,44 @@ namespace MyAutoCADTool
             if (IsLicenseValid())
             {
                 // Gọi hàm C:TENHAM trong file Lisp đã load
-                doc.SendStringToExecute("(C:TEN_HAM_LISP_CUA_BAN) ", true, false, false);
+                // doc.SendStringToExecute("(C:TEN_HAM_LISP_CUA_BAN) ", true, false, false);
+
+                // BƯỚC 2: ĐỌC NỘI DUNG LISP TỪ TRONG DLL
+                // Lưu ý: Tên resource thường là "Tên_Project.Tên_File.lsp"
+                string lispContent = ReadLispFromResource("MyApp.my_logic.lsp");    
+                if (!string.IsNullOrEmpty(lispContent))
+                {
+                    // BƯỚC 3: ĐẨY NỘI DUNG VÀO AUTOCAD ĐỂ CHẠY
+                    // Thêm (C:TEN_LENH) vào cuối để nó tự thực thi sau khi load
+                    // Gửi nội dung lisp vào AutoCAD + lệnh thực thi hàm C:HELLO_CONG
+                    doc.SendStringToExecute(lispContent + "\n(C:HELLO_CONG)\n", true, false, false);
+                    doc.Editor.WriteMessage("\n[Success] Tool đã được kích hoạt và thực thi.");
+                }
+
             }
             else
             {
                 Application.ShowAlertDialog("Bạn chưa có bản quyền! Hãy dùng lệnh ACTIVATE_TOOL.");
             }
         }
+
+        // Hàm phụ trợ để đọc file đã nhúng (Embedded Resource)
+        private string ReadLispFromResource(string resourceName)
+        {
+            try
+            {
+                var assembly = Assembly.GetExecutingAssembly();
+                using (Stream stream = assembly.GetManifestResourceStream(resourceName))
+                {
+                    if (stream == null) return null;
+                    using (StreamReader reader = new StreamReader(stream))
+                    {
+                        return reader.ReadToEnd();
+                    }
+                }
+            }
+            catch { return null; }
+        }
+
     }
 }
