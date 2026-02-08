@@ -8,7 +8,7 @@ using Autodesk.AutoCAD.Runtime;
 using Autodesk.AutoCAD.ApplicationServices;
 using Application = Autodesk.AutoCAD.ApplicationServices.Application;
 
-//[assembly: CommandClass(typeof(MyAutoCADTool.LicenseSystem))]
+[assembly: CommandClass(typeof(MyAutoCADTool.LicenseSystem))]
 
 namespace MyAutoCADTool
 {
@@ -91,7 +91,7 @@ namespace MyAutoCADTool
         }
 
         // 4. LỆNH KÍCH HOẠT (GÕ LỆNH: ACTIVATE_TOOL)
-        // [CommandMethod("ACTIVATE_TOOL")]
+        [CommandMethod("ACTIVATE_TOOL")]
         public void ActivateCommand()
         {
             string hwid = GetHDDSerial();
@@ -131,7 +131,7 @@ namespace MyAutoCADTool
         }
 
         // 5. LỆNH CHẠY TOOL LISP (GÕ LỆNH: MYTOOL)
-        // [CommandMethod("MYTOOL")]
+        [CommandMethod("MYTOOL")]
         public void RunMyLispTool()
         {
             Document doc = Application.DocumentManager.MdiActiveDocument;
