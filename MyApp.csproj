@@ -6,7 +6,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     
     <!-- Output as DLL (class library) thay vì executable -->
-    <OutputType>Library</OutputType>
+    <OutputType>Exe</OutputType>
     
     <!-- Windows Desktop support -->
     <UseWindowsForms>true</UseWindowsForms>
