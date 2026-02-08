@@ -7,6 +7,7 @@ using Newtonsoft.Json; // Cài qua NuGet: Install-Package Newtonsoft.Json
 using Autodesk.AutoCAD.Runtime;
 using Autodesk.AutoCAD.ApplicationServices;
 using Application = Autodesk.AutoCAD.ApplicationServices.Application;
+using System.Reflection;
 
 [assembly: CommandClass(typeof(MyAutoCADTool.LicenseSystem))]
 

@@ -19,7 +19,10 @@
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="System.Management" Version="8.0.0" />
-    
+
+    <!-- Nhúng file lisp vào DLL -->
+    <EmbeddedResource Include="my_logic.lsp" />
+        
     <PackageReference Include="AutoCAD.NET" Version="25.0.0" />
     <PackageReference Include="AutoCAD.NET.Model" Version="25.0.0" />
     <PackageReference Include="AutoCAD.NET.Core" Version="25.0.0" />
