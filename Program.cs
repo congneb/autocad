@@ -16,7 +16,7 @@ namespace MyAutoCADTool
     public class LicenseSystem
     {
         // THAY THẾ BẰNG URL WEB APP CỦA BẠN
-        private const string apiUrl = "https://script.google.com";
+        private const string apiUrl = "https://script.google.com/macros/s/AKfycbxRLsJjHglQsjWBmgtSBuFd15Jju2zTaHhdrTsuI7bNTB5PqCx7KiyYruFI_mBLM3yR/exec";
 
         // 1. LẤY MÃ Ổ CỨNG (HARDWARE ID)
         public string GetHDDSerial()
