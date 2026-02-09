@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>net48</TargetFramework>
     <LangVersion>latest</LangVersion> <!-- This fixes the error -->
-    <Nullable>enable</Nullable>
+    <Nullable>disable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     
     <!-- Output as DLL (class library) -->
@@ -19,7 +19,8 @@
 
   <ItemGroup>
     <PackageReference Include="System.Net.Http" Version="4.3.4" />
-    
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="System.Management" Version="8.0.0" />
 
