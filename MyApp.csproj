@@ -1,11 +1,11 @@
 <Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
 
   <PropertyGroup>
-    <TargetFramework>net8.0-windows</TargetFramework>
+    <TargetFramework>net6.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     
-    <!-- Output as DLL (class library) thay vì executable -->
+    <!-- Output as DLL (class library) -->
     <OutputType>library</OutputType>
     
     <!-- Windows Desktop support -->
@@ -20,12 +20,12 @@
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="System.Management" Version="8.0.0" />
 
-    <!-- Nhúng file lisp vào DLL -->
+    <!-- Embed Lisp file in DLL -->
     <EmbeddedResource Include="my_logic.lsp" />
         
-    <PackageReference Include="AutoCAD.NET" Version="25.0.0" />
-    <PackageReference Include="AutoCAD.NET.Model" Version="25.0.0" />
-    <PackageReference Include="AutoCAD.NET.Core" Version="25.0.0" />
+    <PackageReference Include="AutoCAD.NET" Version="23.1.0" />
+    <PackageReference Include="AutoCAD.NET.Model" Version="23.1.0" />
+    <PackageReference Include="AutoCAD.NET.Core" Version="23.1.0" />
   </ItemGroup>
 
 </Project>
